@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 
 const WelcomePage = () => (
@@ -10,6 +11,7 @@ const WelcomePage = () => (
         src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
         alt="rick"
       />
+      <NavLink to="characters">Characters</NavLink>
     </header>
   </section>
 );
