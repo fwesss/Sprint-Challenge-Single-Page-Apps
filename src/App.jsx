@@ -9,7 +9,7 @@ import WelcomePage from './components/WelcomePage';
 
 
 export default function App() {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState({});
 
   return (
     <main>
@@ -18,7 +18,7 @@ export default function App() {
       <Route
         path="/characters"
         render={() => (
-          <CharacterList query={query} />
+          <CharacterList query={query.query} />
         )}
       />
     </main>
