@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-export default function CharacterList() {
+
+const CharacterList = () => {
   // TODO: Add useState to track data from useEffect
 
   useEffect(() => {
@@ -13,4 +14,6 @@ export default function CharacterList() {
       <h2>TODO: `array.map()` over your state here!</h2>
     </section>
   );
-}
+};
+
+export default CharacterList;
