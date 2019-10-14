@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { CardColumns } from 'reactstrap';
+import CharacterCard from './CharacterCard';
 
 
 const CharacterList = () => {
@@ -13,8 +15,11 @@ const CharacterList = () => {
 
   return (
     <section className="character-list">
-      <h2>TODO: `array.map()` over your state here!</h2>
-      {console.log(characters)}
+      <CardColumns className="p-4">
+        {characters.map((character) => (
+          <CharacterCard key={character.id} character={character} />
+        ))}
+      </CardColumns>
     </section>
   );
 };
