@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 
 import Header from './components/Header';
@@ -9,13 +9,17 @@ import WelcomePage from './components/WelcomePage';
 
 
 export default function App() {
+  const [query, setQuery] = useState('');
+
   return (
     <main>
-      <Header />
+      <Header setQuery={setQuery} />
       <Route exact path="/" component={WelcomePage} />
       <Route
         path="/characters"
-        component={CharacterList}
+        render={() => (
+          <CharacterList query={query} />
+        )}
       />
     </main>
   );

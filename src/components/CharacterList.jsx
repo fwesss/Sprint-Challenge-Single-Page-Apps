@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
+
 import { CardColumns } from 'reactstrap';
 import CharacterCard from './CharacterCard';
 
 
-const CharacterList = () => {
+const CharacterList = ({ query }) => {
   const [characters, addCharacters] = useState([]);
 
   useEffect(() => {
@@ -22,6 +24,10 @@ const CharacterList = () => {
       </CardColumns>
     </section>
   );
+};
+
+CharacterList.propTypes = {
+  query: PropTypes.string.isRequired,
 };
 
 export default CharacterList;
